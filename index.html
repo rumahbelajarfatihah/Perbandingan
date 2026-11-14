@@ -8,12 +8,12 @@
 *{box-sizing:border-box}
 :root{--bg:#eef6f9;--bl:#0b6fa4;--tl:#10a39b;--or:#e8791a;--gr:#1d9a57;--rd:#d65a55;--ink:#14303f;--ln:#cfe0e8}
 html,body{margin:0;height:100%;overflow:hidden;background:#d9e8ee;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink)}
-#stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;margin:-360px 0 0 -640px;transform-origin:center;background:var(--bg);display:grid;grid-template-rows:64px 40px 1fr 56px;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;margin:-360px 0 0 -640px;transform-origin:center;background:var(--bg);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:64px 40px minmax(0,1fr) 56px;overflow:hidden}
 button,input,textarea{font:inherit;color:inherit}
 button{cursor:pointer;min-height:44px;border:0;border-radius:12px}
 :focus-visible{outline:3px solid var(--or);outline-offset:2px}
-header{display:grid;grid-template-columns:330px 1fr 250px;align-items:center;gap:16px;padding:0 16px;background:linear-gradient(90deg,#0b5f8d,#10a39b);color:#fff}
-header h1{font-size:19px;margin:0;line-height:1.1}header h1 small{display:block;font-weight:400;font-size:12px;opacity:.9}
+header{display:grid;grid-template-columns:330px minmax(0,1fr) 250px;align-items:center;gap:16px;padding:0 16px;background:linear-gradient(90deg,#0b5f8d,#10a39b);color:#fff}
+header h1{font-size:19px;margin:0;line-height:1.1}header h1 small{color:#fff;display:block;font-weight:400;font-size:12px;opacity:.9}
 .logo{display:inline-flex;vertical-align:middle;margin-right:8px}
 #pg{background:rgba(255,255,255,.28);border-radius:20px;height:22px;position:relative;overflow:hidden}
 #pf{height:100%;width:0;background:var(--or);transition:width .5s}#pt{position:absolute;inset:0;text-align:center;font:700 13px/22px system-ui}
@@ -23,7 +23,7 @@ header h1{font-size:19px;margin:0;line-height:1.1}header h1 small{display:block;
 #steps{display:flex;gap:6px;align-items:center;padding:0 12px;background:#fff;border-bottom:1px solid var(--ln)}
 .sp{flex:1;font-size:12px;text-align:center;padding:5px 2px;border-radius:14px;background:#e6eef2;font-weight:600;white-space:nowrap}
 .sp.d{background:var(--gr);color:#fff}.sp.c{background:var(--or);color:#fff}
-#body{display:grid;grid-template-columns:225px 1fr 440px;gap:10px;padding:8px 10px;min-height:0}
+#body{display:grid;grid-template-columns:225px minmax(0,1fr) 440px;gap:10px;padding:8px 10px;min-height:0}
 aside,main,section{overflow:auto;min-height:0}
 h4{margin:6px 2px 6px;font-size:13px;color:var(--bl)}
 .stn,.tool{display:flex;gap:8px;align-items:center;width:100%;text-align:left;background:#fff;border:2px solid var(--ln);margin-bottom:6px;padding:6px 8px;font-size:14px;font-weight:700}
@@ -43,10 +43,10 @@ table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid 
 .gr{width:100%;height:auto;display:block;background:#fbfeff;border:1px solid var(--ln);border-radius:10px}.gr text{font-size:10.5px;fill:#456}
 #vis{display:flex;flex-wrap:wrap;gap:4px;min-height:84px;align-content:flex-start;background:#f3fafc;border-radius:12px;padding:8px;margin:6px 0}
 .it{width:26px;height:26px;border-radius:8px;background:var(--tl)}.it.t{background:var(--or);border-radius:50% 50% 6px 6px}.it.m{width:34px;background:var(--bl);border-radius:6px 14px 6px 6px}.run .it{animation:pop .5s backwards}
-.bar{height:26px;background:#e3eef3;border-radius:14px;position:relative;overflow:hidden;margin:4px 0 8px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--tl),var(--bl));transition:width 1.3s ease}.bar span{position:absolute;inset:0;text-align:center;font:700 13px/26px system-ui;color:#fff;text-shadow:0 1px 2px #0006}
-.inp{display:flex;gap:6px;align-items:center;margin:5px 0;flex-wrap:wrap}.inp input[type=number],.inp input[type=text]{width:120px;height:44px;border:2px solid var(--ln);border-radius:10px;padding:0 8px;font-size:16px;font-weight:700}
+.chip{flex:1;text-align:center;border:2px solid var(--ln);border-radius:12px;padding:4px 2px;font-size:13px;background:#fff}.chip.on{background:#fff7e8;border-color:var(--or)}.chip b{display:block;font-size:15px}.stp{padding-left:20px;margin:4px 0;font-size:13px;line-height:1.5}.stp li{margin-bottom:3px}.sl2{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px}.sl2 label{font-size:12.5px}.sl2 input{width:100%;height:36px;accent-color:var(--tl)}#vis svg,#tscn svg,#uscn svg,#mch svg{width:100%;height:auto;display:block}.spin{animation:spin 2.5s linear infinite;transform-box:fill-box;transform-origin:center}@keyframes spin{to{transform:rotate(360deg)}}.cmp{display:flex;gap:8px;align-items:center;margin:3px 0;padding:3px 8px;border:1px solid var(--ln);border-radius:12px}.cmp.calc{background:#fff7e8;border-color:var(--or)}.cb{flex:1;min-width:0}.cb label{font-size:12.5px}.cb input{width:100%;height:30px;accent-color:var(--tl)}.uc{display:flex;gap:3px;width:206px}.uc .seg{padding:0 2px;font-size:12px}.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 3px;font-size:12px}.fr i{font-style:normal;padding:0 4px}.fr i:first-child{border-bottom:1.5px solid var(--ink)}.fm{border:1px solid var(--ln);border-radius:10px;padding:5px 8px;margin:4px 0;font-size:12.5px;line-height:1.7}.fm.on{border-color:var(--or);background:#fff7e8}.seg{flex:1;background:#e3f3fb;color:var(--bl);font-weight:700;font-size:12.5px;padding:0 6px}.seg.on{background:var(--bl);color:#fff}.bar{height:26px;background:#8fb0c1;border-radius:14px;position:relative;overflow:hidden;margin:4px 0 8px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--tl),var(--bl));transition:width 1.3s ease}.bar span{position:absolute;inset:0;text-align:center;font:700 13px/26px system-ui;color:#fff;text-shadow:0 1px 2px #0006}
+.inp label{font-size:12.5px}.inp{display:flex;gap:6px;align-items:center;margin:5px 0;flex-wrap:wrap}.inp input[type=number],.inp input[type=text]{width:122px;height:44px;border:2px solid var(--ln);border-radius:10px;padding:0 8px;font-size:16px;font-weight:700}
 #mapw,#g3{touch-action:none;user-select:none;-webkit-user-select:none;border-radius:12px;overflow:hidden;border:2px solid var(--ln)}
-.pin{cursor:grab}.pre{background:#e3f3fb;color:var(--bl);font-weight:700;padding:0 8px;min-height:36px;margin:2px;font-size:12.5px}
+#mapw{width:400px;margin:0 auto}#mapw svg{display:block;width:100%;height:auto}.pin{cursor:grab}.pre{background:#e3f3fb;color:var(--bl);font-weight:700;padding:0 8px;min-height:36px;margin:2px;font-size:12.5px}
 .lenbar{height:16px;border-radius:8px;margin:3px 0}
 footer{display:flex;gap:8px;align-items:center;padding:6px 12px;background:#fff;border-top:1px solid var(--ln)}
 footer button{background:#e3f3fb;font-weight:700;padding:0 12px;font-size:13px;color:var(--bl)}footer .rs{background:#fdecea;color:#a23b36}
@@ -80,21 +80,30 @@ const cl=(v,a,b)=>Math.max(a,Math.min(b,v));
 let st=1,T={},STP={},OBS=[],F={1:{},2:null,3:{},c:{}},REFL=['','',''],QA=[];
 const SC={kue:{t:'Resep Kue',ic:'cake',type:'senilai',xl:'Jumlah porsi',xu:'porsi',yl:'Tepung',yu:'g',f:x=>50*x,min:1,max:20,def:4,xs:[2,4,6,8,10],story:'Resep: 1 porsi kue memerlukan 50 g tepung. Atur jumlah porsi dan lihat kebutuhan tepung.'},
 tukang:{t:'Proyek Tukang Bangunan',ic:'tukang',type:'berbalik',xl:'Jumlah pekerja',xu:'orang',yl:'Waktu selesai',yu:'hari',f:x=>72/x,min:1,max:24,def:6,xs:[2,3,4,6,8,12],story:'Satu proyek selesai dalam 12 hari oleh 6 pekerja (beban kerja 72 orang-hari). Atur jumlah pekerja.'},
-mobil:{t:'Perjalanan Mobil',ic:'mobil',type:'senilai',xl:'Kecepatan',xu:'km/jam',yl:'Jarak tempuh 2 jam',yu:'km',f:x=>2*x,min:20,max:120,def:60,step:10,xs:[40,60,80,100,120],story:'Mobil melaju selama 2 jam dengan kecepatan tetap. Atur kecepatan dan lihat jarak yang ditempuh.'}};
-const S1={tool:null,x:4,A:null,B:null,res:null,cmp:false};
+mobil:{t:'Perjalanan Mobil',ic:'mobil',type:'berbalik',xl:'Kecepatan',xu:'km/jam',yl:'Waktu tempuh',yu:'jam',f:x=>120/x,min:20,max:120,def:60,step:10,xs:[20,40,60,80,100,120],story:'Mobil menempuh jarak tetap 120 km. Atur kecepatan dan lihat waktu tempuhnya (jarak = kecepatan × waktu).'},
+usia:{t:'Rasio Usia',ic:'usia',type:'senilai',xl:'Usia Anak',xu:'tahun',yl:'Usia Ayah',yu:'tahun',f:x=>x,min:1,max:1,def:0,xs:[]}};
+const KK0=()=>({mode:'loyang',view:'tepung',rt:.5,ra:150});
+const K0=()=>({cs:'awal',p:6,h:12,d1:4,g:2,p2:6,T:10});
+const M0=()=>({mode:'waktu',s:120,v:60,t:2});
+const U0=()=>({a:5,b:2,mode:'salah',ask:'ayah',m:3});
+const S1={tool:null,x:4,A:null,B:null,res:null,cmp:false,u:U0(),mob:M0(),mu:{s:0,v:0,t:0},tk:K0(),kk:KK0(),urun:false};
 const S2={tools:{},cm:4,n:250000,A:null,B:null,pa:{x:110,y:240},pb:{x:238,y:144},cmp:false,ran:false};
 const S3={mode:null,k:6,x:4,A:null,B:null,ran:false,both:false,cmp:false,q:null,anim:false};
 let MAPIMG=null;
 const ICS={cake:'<circle cx="20" cy="22" r="14" fill="#f6c27a"/><rect x="8" y="16" width="24" height="10" rx="3" fill="#e8791a"/><circle cx="20" cy="10" r="3" fill="#d65a55"/>',
 tukang:'<rect x="5" y="28" width="30" height="7" fill="#0b6fa4"/><rect x="9" y="9" width="6" height="19" fill="#e8791a"/><rect x="5" y="5" width="22" height="7" rx="2" fill="#556"/>',
 mobil:'<rect x="3" y="17" width="34" height="12" rx="4" fill="#0b6fa4"/><rect x="10" y="9" width="18" height="10" rx="3" fill="#7cc4e8"/><circle cx="12" cy="31" r="4" fill="#222"/><circle cx="28" cy="31" r="4" fill="#222"/>',
+usia:'<circle cx="13" cy="11" r="5" fill="#0b6fa4"/><rect x="6" y="18" width="14" height="16" rx="5" fill="#0b6fa4"/><circle cx="28" cy="19" r="4" fill="#e8791a"/><rect x="23" y="24" width="10" height="10" rx="4" fill="#e8791a"/>',
+road:'<rect x="3" y="8" width="34" height="24" rx="3" fill="#4b5560"/><path d="M5 20h30" stroke="#fff" stroke-width="2" stroke-dasharray="5 4"/>',
+gauge:'<path d="M5 30a15 15 0 0130 0z" fill="#e3f3fb" stroke="#0b6fa4" stroke-width="2"/><path d="M20 30L28 16" stroke="#d65a55" stroke-width="3"/><circle cx="20" cy="30" r="3" fill="#222"/>',
+clock:'<circle cx="20" cy="20" r="15" fill="#fff" stroke="#345" stroke-width="3"/><path d="M20 20V10M20 20l7 4" stroke="#e8791a" stroke-width="3" stroke-linecap="round"/>',
 ruler:'<rect x="3" y="14" width="34" height="12" rx="2" fill="#f6c453" stroke="#8a6a00"/><path d="M9 14v6M15 14v4M21 14v6M27 14v4M33 14v6" stroke="#8a6a00"/>',
 pin:'<path d="M20 36C10 24 8 20 8 15a12 12 0 0124 0c0 5-2 9-12 21z" fill="#d65a55"/><circle cx="20" cy="15" r="5" fill="#fff"/>',
 map:'<rect x="4" y="6" width="32" height="28" rx="3" fill="#cfe8c4" stroke="#4d8a5a"/><path d="M4 24c10-8 16 6 32-4" stroke="#5db4e6" stroke-width="4" fill="none"/>',
 lin:'<path d="M5 35L35 6" stroke="#0b6fa4" stroke-width="4"/><path d="M5 5v30h30" stroke="#456" fill="none"/>',
 hyp:'<path d="M7 6C9 28 20 33 35 34" stroke="#e8791a" stroke-width="4" fill="none"/><path d="M5 5v30h30" stroke="#456" fill="none"/>'};
 const ic=n=>'<svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true">'+ICS[n]+'</svg>';
-function tryAsset(s,ok){const i=new Image();i.onload=()=>ok(s);i.src=s}
+const AC={};function tryAsset(s,ok){if(AC[s]===0)return;if(AC[s]===1)return ok(s);const i=new Image();i.onload=()=>{AC[s]=1;ok(s)};i.onerror=()=>{AC[s]=0};i.src=s}
 function assets(){$$('[data-a]').forEach(e=>tryAsset(e.dataset.a,s=>{e.innerHTML='<img src="'+s+'" alt="">'}))}
 tryAsset('./assets/img/peta-rimba.png',s=>{MAPIMG=s;if(st==2)drawMap()});
 function snd(n){try{const a=new Audio('./assets/audio/'+n+'.mp3');a.onerror=()=>{};const p=a.play();if(p&&p.catch)p.catch(()=>{})}catch(e){}}
@@ -111,7 +120,7 @@ function render(){side();[m1,m2,m3][st-1]();[r1,r2,r3][st-1]()}
 function tool(n,l,d,on,fn){return`<button class="tool ${on?'on':''}" aria-pressed="${!!on}" onclick="${fn}"><span class="ic" data-a="./assets/img/${n}.png">${ic(n)}</span><span>${l}<small>${d}</small></span></button>`}
 function side(){let h='<h4>Stasiun</h4>';[['Dapur Rasio','Senilai & berbalik nilai'],['Peta Rimba','Skala dan peta'],['Mesin Grafik & Rumus','Grafik dan aljabar']].forEach((a,i)=>h+=`<button class="stn ${st==i+1?'on':''}" onclick="go(${i+1})"><b>${i+1}</b><span>${a[0]}<small>${a[1]}</small></span></button>`);
 h+='<h4>Pilih Alat / Bahan</h4>';
-if(st==1)h+=Object.keys(SC).map(k=>tool(SC[k].ic,SC[k].t,SC[k].type=='senilai'?'Senilai':'Berbalik nilai',S1.tool==k,`pick1('${k}')`)).join('');
+if(st==1)h+=Object.keys(SC).map(k=>tool(SC[k].ic,SC[k].t,k=='usia'?'Rumus rasio usia':k=='mobil'?'Jarak · kecepatan · waktu':k=='tukang'?'Kasus pekerja & waktu':k=='kue'?'Loyang · tepung · air':SC[k].type=='senilai'?'Senilai':'Berbalik nilai',S1.tool==k,`pick1('${k}')`)).join('');
 if(st==2)h+=[['ruler','Penggaris Peta','Tampilkan ukuran cm','ruler'],['pin','Pin Titik A–B','Aktifkan untuk menggeser','pin'],['map','Peta Rimba','Peta bawaan','peta']].map(a=>tool(a[0],a[1],a[2],S2.tools[a[3]],`tg2('${a[3]}')`)).join('');
 if(st==3)h+=tool('lin','y = k·x','Senilai: garis lurus',S3.mode=='lin',"pick3('lin')")+tool('hyp','y = k/x','Berbalik nilai: hiperbola',S3.mode=='hyp',"pick3('hyp')");
 $('#side').innerHTML=h;assets()}
@@ -121,54 +130,239 @@ let s=`<svg viewBox="0 0 ${w} ${h}" class="gr" role="img" aria-label="${o.al||'G
 for(let i=0;i<=4;i++){const gy=o.y1*i/4,gx=o.x0+(o.x1-o.x0)*i/4;s+=`<line x1="${m.l}" x2="${w-m.r}" y1="${Y(gy)}" y2="${Y(gy)}" stroke="#dde9ee"/><text x="${m.l-4}" y="${Y(gy)+4}" text-anchor="end">${nf(gy)}</text><line y1="${m.t}" y2="${h-m.b}" x1="${X(gx)}" x2="${X(gx)}" stroke="#eef4f7"/><text x="${X(gx)}" y="${h-m.b+14}" text-anchor="middle">${nf(gx)}</text>`}
 s+=`<path d="M${m.l} ${m.t}V${h-m.b}H${w-m.r}" stroke="#345" fill="none" stroke-width="1.5"/><text x="${w-m.r}" y="${h-4}" text-anchor="end">${o.xl||'x'}</text><text x="${m.l+4}" y="${m.t+8}">${o.yl||'y'}</text>`;
 o.ser.forEach(e=>{let d='';for(let i=0;i<=90;i++){const x=o.x0+(o.x1-o.x0)*i/90,y=e.f(x);d+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1)}
-s+=`<g clip-path="url(#c${o.id})"><path d="${d}" fill="none" stroke="${e.c}" stroke-width="3" ${o.anim?'pathLength="1" style="stroke-dasharray:1;stroke-dashoffset:1;animation:dd 1.1s forwards"':''}/></g>`;
+s+=`<g clip-path="url(#c${o.id})"><path d="${d}" fill="none" stroke="${e.c}" stroke-width="3" ${o.anim?'pathLength="1" style="animation:dd 1.1s forwards"':''}/></g>`;
 (e.pts||[]).forEach(p=>s+=`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="3.5" fill="${e.c}"/>`);
 if(e.hl)s+=`<circle cx="${X(e.hl[0])}" cy="${Y(e.hl[1])}" r="${e.big?11:6.5}" fill="${e.big?'#e8791a':e.c}" stroke="#fff" stroke-width="2.5"/>`});
 return{svg:s+'</svg>',m}}
-document.head.insertAdjacentHTML('beforeend','<style>@keyframes dd{to{stroke-dashoffset:0}}</style>');
+document.head.insertAdjacentHTML('beforeend','<style>@keyframes dd{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}</style>');
 const kc=(c,x,y)=>c.type=='senilai'?'y ÷ x = '+nf(y)+' ÷ '+nf(x)+' = '+nf(y/x):'x × y = '+nf(x)+' × '+nf(y)+' = '+nf(x*y);
-function g1(k,x,y,col,w,h,id){const c=SC[k];const xs=[...new Set([...c.xs,x])].sort((a,b)=>a-b);
+function g1(k,x,y,col,w,h,id,cc){const c=cc||SC[k];const xs=[...new Set([...c.xs,x])].sort((a,b)=>a-b);
 return graph({w,h,id,x0:c.min,x1:c.max,y1:c.type=='senilai'?c.f(c.max):c.f(c.min),xl:c.xu,yl:c.yu,al:'Grafik '+c.t,ser:[{f:c.f,c:col,pts:xs.map(v=>[v,c.f(v)]),hl:[x,y]}]}).svg}
 /* ===== STASIUN 1 ===== */
-function pick1(k){S1.tool=k;S1.x=SC[k].def;S1.res=null;S1.cmp=false;mark('1:pick');step('pick');render()}
-function m1(){const k=S1.tool;if(!k)return $('#main').innerHTML='<div class="card empty"><h2>Dapur Rasio</h2><p>Pilih satu kartu skenario di kolom kiri untuk memulai percobaan.</p></div>';
+function pick1(k){S1.tool=k;S1.x=SC[k].def;if(k=='usia')S1.u=U0();if(k=='kue'){S1.kk=KK0();kSync()}if(k=='tukang'){S1.tk=K0();TP=0;tkSync()}if(k=='mobil'){S1.mob=M0();S1.mu={s:0,v:0,t:0};MP=0;mSync()}S1.res=null;S1.cmp=false;mark('1:pick');step('pick');render()}
+function m1(){const k=S1.tool;if(!k)return $('#main').innerHTML='<div class="card empty"><h2>Dapur Rasio</h2><p>Pilih satu kartu skenario di kolom kiri untuk memulai percobaan.</p></div>';if(k=='usia')return mU();if(k=='mobil')return mM();if(k=='tukang')return mT();if(k=='kue')return mK();
 const c=SC[k];$('#main').innerHTML=`<div class="card"><h2>${c.t} <span class="pill ${c.type}">${c.type=='senilai'?'Senilai':'Berbalik nilai'}</span></h2><p>${c.story}</p><div id="vis" aria-hidden="true"></div><div class="bar"><i id="fl"></i><span id="bl">Tekan Jalankan Simulasi</span></div>
 <label for="sl">${c.xl}: <b id="xv">${S1.x}</b> ${c.xu}</label><div class="row"><button class="sm" aria-label="Kurangi" onclick="nud1(-1)">−</button><input id="sl" type="range" min="${c.min}" max="${c.max}" step="${c.step||1}" value="${S1.x}" oninput="set1(this.value)"><button class="sm" aria-label="Tambah" onclick="nud1(1)">+</button></div>
 <p style="text-align:center"><button class="go" onclick="run1()">▶ Jalankan Simulasi</button></p></div>`;vis()}
-function vis(){const k=S1.tool,n=k=='mobil'?Math.round(S1.x/10):Math.min(S1.x,24),cls=k=='tukang'?'t':k=='mobil'?'m':'';$('#vis').innerHTML=Array.from({length:n},(_,i)=>`<span class="it ${cls}" style="animation-delay:${i*40}ms"></span>`).join('')}
+function vis(){if(S1.tool=='kue'){$('#vis').innerHTML=sceneK($('#vis').className=='run');return}const k=S1.tool,n=k=='mobil'?Math.round(S1.x/10):Math.min(S1.x,24),cls=k=='tukang'?'t':k=='mobil'?'m':'';$('#vis').innerHTML=Array.from({length:n},(_,i)=>`<span class="it ${cls}" style="animation-delay:${i*40}ms"></span>`).join('')}
 function nud1(d){const c=SC[S1.tool],v=cl(S1.x+d*(c.step||1),c.min,c.max);$('#sl').value=v;set1(v)}
 function set1(v){S1.x=+v;S1.res=null;S1.cmp=false;mark('1:set');step('set');$('#xv').textContent=v;vis();$('#fl').style.width='0';$('#bl').textContent='Tekan Jalankan Simulasi';r1()}
-function run1(){const c=SC[S1.tool],x=S1.x,y=c.f(x);S1.res={x,y};mark('1:run');step('run');step('obs');
+function run1(){if(S1.tool=='usia')return runU();if(S1.tool=='mobil')return runM();if(S1.tool=='tukang')return runT();if(S1.tool=='kue')return runK();const c=SC[S1.tool],x=S1.x,y=c.f(x);S1.res={x,y};mark('1:run');step('run');step('obs');
 F[1][S1.tool]=`x = ${nf(x)} ${c.xu} → y = ${nf(y)} ${c.yu}; ${kc(c,x,y)} (tetap), sehingga perbandingan ${c.type=='senilai'?'senilai':'berbalik nilai'}.`;
 obs(1,`${c.t}: ${nf(x)} ${c.xu} → ${nf(y)} ${c.yu}; ${kc(c,x,y)}.`);
 $('#vis').className='run';vis();const mx=c.type=='senilai'?c.f(c.max):c.f(c.min);setTimeout(()=>{$('#fl').style.width=Math.max(4,y/mx*100)+'%';$('#bl').textContent=c.yl+' = '+nf(y)+' '+c.yu},30);r1()}
-function narr1(c){return c.type=='senilai'?`Semakin besar ${c.xl.toLowerCase()}, semakin besar ${c.yl.toLowerCase()} → perbandingan senilai.`:`Semakin banyak pekerja, semakin singkat waktu → perbandingan berbalik nilai.`}
-function sv1(w){if(!S1.res)return toast('Jalankan simulasi dulu sebelum menyimpan.','bad');S1[w]={tool:S1.tool,x:S1.res.x,y:S1.res.y};mark('1:'+w);step('save');obs(1,`Skenario ${w} disimpan: ${SC[S1.tool].t}, x = ${nf(S1.res.x)}.`);toast('Skenario '+w+' tersimpan','ok');r1()}
-function cmp1(){if(!S1.A||!S1.B)return toast('Simpan Skenario A dan B terlebih dahulu.','bad');S1.cmp=!S1.cmp;if(S1.cmp){mark('1:cmp');step('cmp');const a=S1.A,b=S1.B,ca=SC[a.tool],cb=SC[b.tool];
-F.c[1]=a.tool==b.tool?`Pada ${ca.t}, x = ${nf(a.x)} dan x = ${nf(b.x)} menghasilkan y = ${nf(a.y)} dan ${nf(b.y)}; ${ca.type=='senilai'?'rasio y ÷ x sama':'hasil kali x × y sama'} (${nf(ca.type=='senilai'?a.y/a.x:a.x*a.y)}).`:`${ca.t} (${ca.type}) dibandingkan dengan ${cb.t} (${cb.type}).`;obs(1,'Membandingkan skenario A dan B. '+F.c[1])}r1()}
+function narr1(c){return c.type=='senilai'?`Semakin besar ${c.xl.toLowerCase()}, semakin besar ${c.yl.toLowerCase()} → perbandingan senilai.`:S1.tool=='mobil'?`Semakin besar kecepatan, semakin singkat waktu tempuh → perbandingan berbalik nilai.`:`Semakin banyak pekerja, semakin singkat waktu → perbandingan berbalik nilai.`}
+function sv1(w){if(!S1.res)return toast('Jalankan simulasi dulu sebelum menyimpan.','bad');S1[w]={tool:S1.tool,x:S1.res.x,y:S1.res.y,u:{...S1.u},m:{...S1.mob},k:{...S1.tk},kk:{...S1.kk}};mark('1:'+w);step('save');obs(1,`Skenario ${w} disimpan: ${SC[S1.tool].t}, x = ${nf(S1.res.x)}.`);toast('Skenario '+w+' tersimpan','ok');r1()}
+function cmp1(){if(!S1.A||!S1.B)return toast('Simpan Skenario A dan B terlebih dahulu.','bad');S1.cmp=!S1.cmp;if(S1.cmp){mark('1:cmp');step('cmp');const a=S1.A,b=S1.B,ca=cf(a),cb=cf(b);
+F.c[1]=a.tool=='kue'&&b.tool=='kue'?`A: ${nf(a.x)} loyang → ${nf(a.y)} ${ca.yu} ${ca.yl.toLowerCase()} (y ÷ x = ${nf(a.y/a.x)}); B: ${nf(b.x)} loyang → ${nf(b.y)} ${cb.yu} ${cb.yl.toLowerCase()} (y ÷ x = ${nf(b.y/b.x)}). Aturan resep A: ${nf(a.kk.rt)} kg tepung + ${nf(a.kk.ra)} ml air per loyang; B: ${nf(b.kk.rt)} kg + ${nf(b.kk.ra)} ml (senilai).`:a.tool=='tukang'&&b.tool=='tukang'?`Kasus A — ${tkTxt(a.k)} Kasus B — ${tkTxt(b.k)}`:a.tool=='mobil'&&b.tool=='mobil'&&a.m.mode!=b.m.mode?`Perjalanan A mengamati ${ca.xl.toLowerCase()} terhadap ${ca.yl.toLowerCase()} (${ca.type=='senilai'?'senilai':'berbalik nilai'}); B mengamati ${cb.xl.toLowerCase()} terhadap ${cb.yl.toLowerCase()} (${cb.type=='senilai'?'senilai':'berbalik nilai'}).`:a.tool==b.tool&&a.tool=='usia'?`Rasio usia A = ${a.u.a} : ${a.u.b} (Ayah ${nf(a.y)}, Anak ${nf(a.x)} tahun) dan B = ${b.u.a} : ${b.u.b} (Ayah ${nf(b.y)}, Anak ${nf(b.x)} tahun); Ayah ÷ Anak = ${nf(a.y/a.x)} dan ${nf(b.y/b.x)}.`:a.tool==b.tool?`Pada ${ca.t}, x = ${nf(a.x)} dan x = ${nf(b.x)} menghasilkan y = ${nf(a.y)} dan ${nf(b.y)}; ${ca.type=='senilai'?'rasio y ÷ x sama':'hasil kali x × y sama'} (${nf(ca.type=='senilai'?a.y/a.x:a.x*a.y)}).`:`${ca.t} (${ca.type}) dibandingkan dengan ${cb.t} (${cb.type}).`;obs(1,'Membandingkan skenario A dan B. '+F.c[1])}r1()}
 function r1(){const el=$('#res'),k=S1.tool;if(!k)return el.innerHTML='<div class="card"><h3>Panel Hasil</h3><p>Tabel nilai, konstanta, narasi, dan grafik akan muncul di sini.</p></div>';
 const c=SC[k],R=S1.res;let h='';
 const btn=`<button class="sv" onclick="sv1('A')">💾 Simpan A${S1.A?' ✓':''}</button><button class="sv o" onclick="sv1('B')">💾 Simpan B${S1.B?' ✓':''}</button><button class="sv g" onclick="cmp1()">⇄ ${S1.cmp?'Tutup':'Bandingkan'}</button>`;
-if(S1.cmp&&S1.A&&S1.B){const a=S1.A,b=S1.B,ca=SC[a.tool],cb=SC[b.tool];const row=(n,f)=>`<tr><th>${n}</th><td class="a">${f(a,ca)}</td><td class="b">${f(b,cb)}</td></tr>`;
+if(S1.cmp&&S1.A&&S1.B){const a=S1.A,b=S1.B,ca=cf(a),cb=cf(b);const row=(n,f)=>`<tr><th>${n}</th><td class="a">${f(a,ca)}</td><td class="b">${f(b,cb)}</td></tr>`;
 h=`<div class="card"><h3>Perbandingan Skenario A dan B</h3><table><tr><th></th><th style="color:#0b6fa4">A</th><th style="color:#e8791a">B</th></tr>${row('Skenario',(s,c)=>c.t)}${row('Jenis',(s,c)=>c.type=='senilai'?'Senilai':'Berbalik nilai')}${row('Nilai x',(s,c)=>nf(s.x)+' '+c.xu)}${row('Nilai y',(s,c)=>nf(s.y)+' '+c.yu)}${row('Konstanta',(s,c)=>c.type=='senilai'?'y÷x = '+nf(s.y/s.x):'x×y = '+nf(s.x*s.y))}</table>
-<div style="display:flex;gap:6px;margin-top:6px"><div style="flex:1">${g1(a.tool,a.x,a.y,'#0b6fa4',300,230,'a')}</div><div style="flex:1">${g1(b.tool,b.x,b.y,'#e8791a',300,230,'b')}</div></div><p class="narr">${F.c[1]}</p>${btn}</div>`}
-else if(!R)h=`<div class="card"><h3>Hasil Simulasi</h3><p>Atur variabel, lalu tekan <b>Jalankan Simulasi</b>.</p>${btn}</div>`;
+<div style="display:flex;gap:6px;margin-top:6px"><div style="flex:1">${gg(a,'#0b6fa4',300,230,'a')}</div><div style="flex:1">${gg(b,'#e8791a',300,230,'b')}</div></div><p class="narr">${F.c[1]}</p>${btn}</div>`}
+else if(!R)h=(k=='usia'?fU(S1.u,false):'')+`<div class="card"><h3>Hasil Simulasi</h3><p>Atur variabel, lalu tekan <b>Jalankan Simulasi</b>.</p>${btn}</div>`;
+else if(k=='usia')h=resU(btn);
+else if(k=='kue')h=resK(btn);
 else{const xs=[...new Set([...c.xs,R.x])].sort((a,b)=>a-b);
 h=`<div class="card"><h3>Tabel Nilai — ${c.t}</h3><table><tr><th>${c.xl} (${c.xu})</th><th>${c.yl} (${c.yu})</th><th>${c.type=='senilai'?'y ÷ x':'x × y'}</th></tr>${xs.map(v=>{const y=c.f(v);return`<tr class="${v==R.x?'hl':''}"><td>${nf(v)}</td><td>${nf(y)}</td><td>${nf(c.type=='senilai'?y/v:y*v)}</td></tr>`}).join('')}</table>
 <p class="const">Konstanta: ${kc(c,R.x,R.y)} (selalu tetap)</p><p class="narr">${narr1(c)}</p>${g1(k,R.x,R.y,c.type=='senilai'?'#0b6fa4':'#e8791a',400,190,'g')}${btn}</div>`}
-el.innerHTML=h}
+el.innerHTML=(k=='mobil'&&!(S1.cmp&&S1.A&&S1.B)?convM():'')+(k=='tukang'&&R&&!(S1.cmp&&S1.A&&S1.B)?tkSteps(S1.tk):'')+h}
+
+/* ===== Rasio Usia ===== */
+const fr=(n,d)=>`<span class="fr"><i>${n}</i><i>${d}</i></span>`;
+const MD={salah:['Diketahui usia salah satunya','Usia Diketahui','Angka Rasio Diketahui'],jumlah:['Diketahui jumlah usia mereka','Jumlah Usia','Jumlah Semua Angka Rasio'],selisih:['Diketahui selisih usia mereka','Selisih Usia','Selisih Angka Rasio']};
+function uInfo(u){const{a,b,mode,ask,m}=u,rd=ask=='ayah'?a:b,rk=ask=='ayah'?b:a,den=mode=='salah'?rk:mode=='jumlah'?a+b:a-b;return{rd,rk,den,v:den*m,res:rd*m,ayah:a*m,anak:b*m}}
+function fU(u,calc){const o=uInfo(u);const row=k=>`<div class="fm ${u.mode==k?'on':''}"><b>Jika ${MD[k][0].toLowerCase()}:</b><br>Usia Ditanya = ${fr('Angka Rasio Ditanya',MD[k][2])} × ${MD[k][1]}${u.mode==k&&calc?`<br>= ${fr(o.rd,o.den)} × ${o.v} = <b>${nf(o.res)} tahun</b> (usia ${u.ask=='ayah'?'Ayah':'Anak'})`:''}</div>`;
+return`<div class="card"><h3>Pilih rumus sesuai informasi pada soal</h3>${row('salah')+row('jumlah')+row('selisih')}</div>`}
+function mU(){const u=S1.u,o=uInfo(u);const lb=u.mode=='salah'?(u.ask=='ayah'?'Usia Anak (diketahui)':'Usia Ayah (diketahui)'):u.mode=='jumlah'?'Jumlah usia Ayah dan Anak':'Selisih usia Ayah dan Anak';
+$('#main').innerHTML=`<div class="card"><h2>Rasio Usia <span class="pill senilai">Senilai</span></h2><p>Usia Ayah : Anak = <b>${u.a} : ${u.b}</b>. Pilih informasi yang diketahui, atur nilainya, lalu jalankan simulasi.</p>
+<div id="uscn">${sceneU(false)}</div>
+<div class="row" style="margin:4px 0"><label>Ayah</label><button class="sm" aria-label="Kurangi angka rasio Ayah" onclick="uSet('a',-1)">−</button><b>${u.a}</b><button class="sm" aria-label="Tambah angka rasio Ayah" onclick="uSet('a',1)">+</button><b>:</b><label>Anak</label><button class="sm" aria-label="Kurangi angka rasio Anak" onclick="uSet('b',-1)">−</button><b>${u.b}</b><button class="sm" aria-label="Tambah angka rasio Anak" onclick="uSet('b',1)">+</button></div>
+<div class="row" style="margin:4px 0">${['salah','jumlah','selisih'].map(k=>`<button class="seg ${u.mode==k?'on':''}" aria-pressed="${u.mode==k}" onclick="uMode('${k}')">${MD[k][0]}</button>`).join('')}</div>
+${u.mode=='salah'?`<div class="row" style="margin:4px 0"><label>Usia yang ditanya:</label><button class="seg ${u.ask=='ayah'?'on':''}" onclick="uAsk('ayah')">Ayah</button><button class="seg ${u.ask=='anak'?'on':''}" onclick="uAsk('anak')">Anak</button></div>`:''}
+<label for="sl">${lb}: <b id="xv">${o.v}</b> tahun</label><div class="row"><button class="sm" aria-label="Kurangi" onclick="uM(u_().m-1)">−</button><input id="sl" type="range" min="1" max="12" step="1" value="${u.m}" oninput="uM(+this.value)"><button class="sm" aria-label="Tambah" onclick="uM(u_().m+1)">+</button></div>
+<p style="text-align:center"><button class="go" onclick="run1()">▶ Jalankan Simulasi</button></p></div>`}
+const u_=()=>S1.u;
+function uChg(full){S1.urun=false;S1.res=null;S1.cmp=false;mark('1:set');step('set');if(full){mU()}else{$('#xv').textContent=uInfo(S1.u).v;const e=$('#uscn');if(e)e.innerHTML=sceneU(false)}r1()}
+function uSet(f,d){const u=S1.u;if(f=='a'){u.a=cl(u.a+d,2,9);u.b=Math.min(u.b,u.a-1)}else u.b=cl(u.b+d,1,u.a-1);uChg(1)}
+function uMode(k){S1.u.mode=k;uChg(1)}function uAsk(k){S1.u.ask=k;uChg(1)}
+function uM(v){S1.u.m=cl(v,1,12);if($('#sl'))$('#sl').value=S1.u.m;uChg(0)}
+function runU(){const u=S1.u,o=uInfo(u);S1.res={x:o.anak,y:o.ayah};mark('1:run');step('run');step('obs');
+const ask=u.ask=='ayah'?'Ayah':'Anak',inf=u.mode=='salah'?`usia ${u.ask=='ayah'?'Anak':'Ayah'} = ${o.v} tahun`:u.mode=='jumlah'?`jumlah usia = ${o.v} tahun`:`selisih usia = ${o.v} tahun`;
+const rs=u.mode=='salah'?`usia ${ask} = ${o.rd}/${o.den} × ${o.v} = ${nf(o.res)} tahun`:`usia ${ask==='Ayah'?'Ayah':'Anak'} = ${o.rd}/${o.den} × ${o.v} = ${nf(o.res)} tahun`;
+F[1].usia=`Rasio Ayah : Anak = ${u.a} : ${u.b}; ${inf}; ${rs}. Hasil: Ayah ${o.ayah} tahun dan Anak ${o.anak} tahun (jumlah ${o.ayah+o.anak}, selisih ${o.ayah-o.anak}); Ayah ÷ Anak = ${nf(u.a/u.b)} (tetap), sehingga senilai.`;
+obs(1,`Rasio Usia ${u.a} : ${u.b}, ${inf}: Ayah ${o.ayah} tahun, Anak ${o.anak} tahun.`);
+S1.urun=true;const e=$('#uscn');if(e)e.innerHTML=sceneU(true);r1()}
+function gU(u,x,y,col,w,h,id){const x1=Math.max(10,Math.ceil(x*1.5)),f=t=>u.a/u.b*t;return graph({w,h,id,x0:0,x1,y1:f(x1),xl:'Anak',yl:'Ayah',al:'Grafik usia Ayah terhadap usia Anak',ser:[{f,c:col,pts:[1,2,3,4,5].map(k=>[u.b*k,u.a*k]).filter(p=>p[0]<=x1),hl:[x,y]}]}).svg}
+const gg=(s,col,w,h,id)=>s.tool=='usia'?gU(s.u,s.x,s.y,col,w,h,id):g1(s.tool,s.x,s.y,col,w,h,id,s.tool=='mobil'?mcfg(s.m):s.tool=='tukang'?tkcfg(s.k):s.tool=='kue'?kcfg(s.kk):null);
+const cf=s=>s.tool=='mobil'?{...SC.mobil,...mcfg(s.m)}:s.tool=='tukang'?{...SC.tukang,...tkcfg(s.k)}:s.tool=='kue'?{...SC.kue,...kcfg(s.kk)}:SC[s.tool];
+function resU(btn){const u=S1.u,ks=[...new Set([1,2,3,4,5,u.m])].sort((a,b)=>a-b);
+return fU(u,true)+`<div class="card"><h3>Tabel Nilai — Rasio Usia ${u.a} : ${u.b}</h3><table><tr><th>Pengali</th><th>Anak</th><th>Ayah</th><th>Jumlah</th><th>Selisih</th></tr>${ks.map(k=>`<tr class="${k==u.m?'hl':''}"><td>${k}</td><td>${u.b*k}</td><td>${u.a*k}</td><td>${(u.a+u.b)*k}</td><td>${(u.a-u.b)*k}</td></tr>`).join('')}</table>
+<p class="const">Konstanta: Ayah ÷ Anak = ${u.a} ÷ ${u.b} = ${nf(u.a/u.b)} (selalu tetap)</p><p class="narr">Rasio ${u.a} : ${u.b} berarti usia Ayah = ${u.a}k dan Anak = ${u.b}k. Semakin besar k, kedua usia ikut membesar dengan perbandingan tetap → senilai.</p>${gU(u,S1.res.x,S1.res.y,'#0b6fa4',400,170,'g')}${btn}</div>`}
+
+/* ===== Perjalanan Mobil: jarak, kecepatan, waktu ===== */
+const UN={s:[['km',1],['m',1000],['cm',100000]],v:[['km/jam',1],['m/menit',1000/60],['m/detik',1000/3600]],t:[['jam',1],['menit',60],['detik',3600]]};
+const UCOMP=[[0,0,0],[1,1,1],[1,2,2]],MN={s:['Jarak','road',20,300,10],v:['Kecepatan','gauge',20,120,10],t:['Waktu','clock',1,8,.5]},MC={waktu:'t',kecepatan:'v',jarak:'s'};
+let RAF=0,MP=0;
+function mCalc(m){const r={s:m.s,v:m.v,t:m.t};if(m.mode=='waktu')r.t=m.s/m.v;else if(m.mode=='kecepatan')r.v=m.s/m.t;else r.s=m.v*m.t;return r}
+function mcfg(m){const b={t:'Perjalanan Mobil'};
+if(m.mode=='waktu')return{...b,type:'berbalik',xl:'Kecepatan',xu:'km/jam',yl:'Waktu tempuh',yu:'jam',f:x=>m.s/x,min:20,max:120,step:10,xs:[20,40,60,80,100,120]};
+if(m.mode=='kecepatan')return{...b,type:'berbalik',xl:'Waktu',xu:'jam',yl:'Kecepatan',yu:'km/jam',f:x=>m.s/x,min:1,max:8,step:1,xs:[1,2,3,4,6,8]};
+return{...b,type:'senilai',xl:'Waktu',xu:'jam',yl:'Jarak tempuh',yu:'km',f:x=>m.v*x,min:1,max:8,step:1,xs:[1,2,3,4,6,8]}}
+function mSync(){const m=S1.mob;Object.assign(SC.mobil,mcfg(m));S1.x=m.mode=='waktu'?m.v:m.t}
+function mM(){const m=S1.mob,r=mCalc(m),cf_=mcfg(m),cc=MC[m.mode];
+const row=k=>{const[n,ico,mi,ma,sp]=MN[k],ui=S1.mu[k],[un,f]=UN[k][ui],calc=k==cc;
+return`<div class="cmp ${calc?'calc':''}"><span class="ic">${ic(ico)}</span><div class="cb"><label ${calc?'':`for="in_${k}"`}>${n}${calc?' (dicari, dihitung otomatis)':''}: <b id="lv_${k}">${nf(r[k]*f)} ${un}</b></label>${calc?'':`<input id="in_${k}" type="range" min="${mi}" max="${ma}" step="${sp}" value="${m[k]}" oninput="mobSet('${k}',this.value)">`}</div><div class="uc" role="group" aria-label="Satuan ${n}">${UN[k].map((u,i)=>`<button class="seg ${i==ui?'on':''}" aria-pressed="${i==ui}" onclick="mobUnit('${k}',${i})">${u[0]}</button>`).join('')}</div></div>`};
+$('#main').innerHTML=`<div class="card"><h2>Perjalanan Mobil <span class="pill ${cf_.type}">${cf_.type=='senilai'?'Senilai':'Berbalik nilai'}</span></h2><div id="scn">${sceneM(MP)}</div>
+<div class="row" style="margin:4px 0"><label>Yang dicari:</label>${[['waktu','Waktu'],['kecepatan','Kecepatan'],['jarak','Jarak']].map(a=>`<button class="seg ${m.mode==a[0]?'on':''}" aria-pressed="${m.mode==a[0]}" onclick="mobMode('${a[0]}')">${a[1]}</button>`).join('')}</div>${row('s')+row('v')+row('t')}<p style="text-align:center;margin:4px"><button class="go" onclick="run1()">▶ Jalankan Simulasi</button></p></div>`}
+function mRefresh(){const r=mCalc(S1.mob);['s','v','t'].forEach(k=>{const[un,f]=UN[k][S1.mu[k]],e=$('#lv_'+k);if(e)e.textContent=nf(r[k]*f)+' '+un});const e=$('#scn');if(e)e.innerHTML=sceneM(MP)}
+function mReset(){S1.res=null;S1.cmp=false;MP=0;cancelAnimationFrame(RAF);mark('1:set');step('set')}
+function mobSet(k,v){S1.mob[k]=+v;mSync();mReset();mRefresh();r1()}
+function mobMode(k){S1.mob.mode=k;mSync();mReset();mM();r1()}
+function mobUnit(k,i){S1.mu[k]=i;mM();r1()}
+function runM(){const m=S1.mob,c=SC.mobil,x=S1.x,y=c.f(x),r=mCalc(m);S1.res={x,y};mark('1:run');step('run');step('obs');
+F[1].mobil=`s = v × t → ${nf(r.s)} km = ${nf(r.v)} km/jam × ${nf(r.t)} jam; pengamatan ${c.xl.toLowerCase()} terhadap ${c.yl.toLowerCase()}: ${kc(c,x,y)} (tetap), sehingga ${c.type=='senilai'?'senilai':'berbalik nilai'}.`;
+obs(1,`Perjalanan Mobil: jarak ${nf(r.s)} km, kecepatan ${nf(r.v)} km/jam, waktu ${nf(r.t)} jam; ${kc(c,x,y)}.`);animTrip();r1()}
+function animTrip(){cancelAnimationFrame(RAF);if(matchMedia('(prefers-reduced-motion:reduce)').matches){MP=1;const e=$('#scn');if(e)e.innerHTML=sceneM(1);return}
+const t0=performance.now(),D=2600,f=n=>{MP=Math.min(1,(n-t0)/D);const e=$('#scn');if(!e)return;e.innerHTML=sceneM(MP);if(MP<1)RAF=requestAnimationFrame(f)};RAF=requestAnimationFrame(f)}
+function sceneM(p){const r=mCalc(S1.mob),x0=60,x1=500,cx=x0+(x1-x0)*p,el=p*r.t,ds=p*r.s;const hd=(a,L)=>[(505+L*Math.sin(a*Math.PI/180)).toFixed(1),(30-L*Math.cos(a*Math.PI/180)).toFixed(1)],h1=hd(el*30,12),h2=hd(el*360,19);
+let s=`<svg viewBox="0 0 560 170" class="gr" role="img" aria-label="Mobil menempuh jarak ${nf(r.s)} km dengan kecepatan ${nf(r.v)} km/jam selama ${nf(r.t)} jam"><rect width="560" height="170" fill="#e6f4fb"/><rect y="134" width="560" height="36" fill="#c4e3b4"/><rect y="96" width="560" height="38" fill="#4b5560"/><line x1="0" x2="560" y1="115" y2="115" stroke="#fff" stroke-width="3" stroke-dasharray="18 14"/>`;
+for(let i=0;i<=4;i++){const X=x0+(x1-x0)*i/4;s+=`<line x1="${X}" x2="${X}" y1="134" y2="140" stroke="#345"/><text x="${X}" y="151" text-anchor="middle" font-size="11" fill="#234">${nf(r.s*i/4)}</text>`}
+s+=`<text x="280" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#0b6fa4">Jarak = ${nf(r.s)} km</text>`;
+s+=`<line x1="18" x2="18" y1="74" y2="96" stroke="#234" stroke-width="2"/><path d="M18 74l20 6-20 6z" fill="#1d9a57"/><line x1="530" x2="530" y1="74" y2="96" stroke="#234" stroke-width="2"/><path d="M530 74l20 6-20 6z" fill="#d65a55"/>`;
+s+=`<g transform="translate(${(cx-30).toFixed(1)},0)"><rect y="90" width="60" height="18" rx="5" fill="#e8791a"/><path d="M12 90l8-12h24l8 12z" fill="#f6a14f"/><path d="M22 90l5-9h8v9zM38 90v-9h5l5 9z" fill="#d7eefa"/><circle cx="14" cy="108" r="7" fill="#222"/><circle cx="46" cy="108" r="7" fill="#222"/><circle cx="14" cy="108" r="2.5" fill="#ddd"/><circle cx="46" cy="108" r="2.5" fill="#ddd"/></g>`;
+s+=`<text x="${cx.toFixed(1)}" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#14303f">v = ${nf(r.v)} km/jam</text><text x="${cx.toFixed(1)}" y="128" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">${nf(ds)} km ditempuh</text>`;
+s+=`<circle cx="505" cy="30" r="24" fill="#fff" stroke="#345" stroke-width="3"/>`;for(let i=0;i<12;i++){const a=i*Math.PI/6;s+=`<line x1="${(505+19*Math.sin(a)).toFixed(1)}" y1="${(30-19*Math.cos(a)).toFixed(1)}" x2="${(505+22*Math.sin(a)).toFixed(1)}" y2="${(30-22*Math.cos(a)).toFixed(1)}" stroke="#345"/>`}
+s+=`<line x1="505" y1="30" x2="${h1[0]}" y2="${h1[1]}" stroke="#14303f" stroke-width="3.5" stroke-linecap="round"/><line x1="505" y1="30" x2="${h2[0]}" y2="${h2[1]}" stroke="#e8791a" stroke-width="2.5" stroke-linecap="round"/><circle cx="505" cy="30" r="2.5" fill="#14303f"/><text x="472" y="26" text-anchor="end" font-size="11" fill="#345">Waktu</text><text x="472" y="42" text-anchor="end" font-size="13" font-weight="700" fill="#14303f">${nf(el)} jam</text></svg>`;return s}
+function convM(){const r=mCalc(S1.mob),mu=S1.mu,rows=['s','v','t'].map(k=>{const f0=UN[k][0];return`<tr><td><b>${MN[k][0]}</b></td><td>${UN[k].map((u,i)=>`<span style="${i==mu[k]?'background:#fff1dc;font-weight:700;padding:0 3px;border-radius:5px':''}">${nf(r[k]*u[1])} ${u[0]}</span>`).join(' = ')}</td></tr><tr><td colspan="2" style="font-size:11.5px;color:#456;text-align:left">${UN[k].slice(1).map(u=>`1 ${f0[0]} = ${nf(u[1])} ${u[0]}`).join(' · ')}</td></tr>`}).join('');
+const ok=UCOMP.some(c=>c[0]==mu.s&&c[1]==mu.v&&c[2]==mu.t),S=r.s*UN.s[mu.s][1],V=r.v*UN.v[mu.v][1],Tt=r.t*UN.t[mu.t][1];
+const chk=ok?`s = v × t → ${nf(S)} ${UN.s[mu.s][0]} ${Math.abs(V*Tt-S)<1e-6*Math.max(1,S)&&Math.abs(V-Math.round(V*100)/100)<1e-9?'=':'≈'} ${nf(V)} ${UN.v[mu.v][0]} × ${nf(Tt)} ${UN.t[mu.t][0]}`:'Satuan belum searah. Samakan dulu: (km, km/jam, jam), (m, m/menit, menit), atau (m, m/detik, detik).';
+return`<div class="card"><h3>Konversi Satuan per Komponen</h3><table>${rows}</table><p class="${ok?'formula':'narr'}" style="margin-top:6px;font-size:13px">${chk}</p></div>`}
+
+/* ===== Visual: Kue, Usia, Mesin ===== */
+function sceneK(run){const n=S1.x,kk=S1.kk,kg=kk.rt*n,ml=kk.ra*n,fl=n/20,wl=n/20,m=Math.min(n,20);
+let s=`<svg viewBox="0 0 560 140" role="img" aria-label="${n} loyang kue memerlukan ${nf(kg)} kg tepung dan ${nf(ml)} ml air"><rect width="560" height="140" rx="10" fill="#fff7ea"/>`;
+s+=`<path d="M22 74Q66 ${(70-6-fl*50).toFixed(1)} 110 74z" fill="#f6e7b8" stroke="#c9b57a" stroke-width="1.5"/><path d="M14 72h104l-10 36q-42 11-84 0z" fill="#cfe3f1" stroke="#6a9bb8" stroke-width="2"/><text x="66" y="126" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14303f">Tepung ${nf(kg)} kg</text><text x="66" y="16" text-anchor="middle" font-size="11" fill="#6b4b1a">1 loyang = ${nf(kk.rt)} kg</text>`;
+s+=`<path d="M150 34h50l6 78q-31 8-62 0z" fill="#e8f5fc" stroke="#5a97b8" stroke-width="2"/><path d="M152.4 ${(110-wl*72).toFixed(1)}h45.2l${(.5+wl*4).toFixed(1)} ${(wl*72).toFixed(1)}q-26 7-52 0z" fill="#5db4e6" opacity=".85"/><path d="M200 44h14q8 0 8 9t-8 9h-8" fill="none" stroke="#5a97b8" stroke-width="3"/><text x="178" y="126" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14303f">Air ${nf(ml)} ml</text><text x="178" y="16" text-anchor="middle" font-size="11" fill="#2a6a8a">1 loyang = ${nf(kk.ra)} ml</text>`;
+for(let i=0;i<m;i++){const cx=250+(i%10)*30,cy=44+Math.floor(i/10)*40;s+=`<g transform="translate(${cx},${cy})"><g ${run?`style="animation:pop .45s ${i*60}ms backwards;transform-box:fill-box;transform-origin:center"`:''}><path d="M-12 4h24l-3 14h-18z" fill="#9a9aa5"/><path d="M-11 4q0-10 11-10t11 10z" fill="#e8b45a"/><circle cx="-3" cy="-2" r="1.3" fill="#fff"/></g></g>`}
+return s+`<text x="250" y="126" font-size="12.5" font-weight="700" fill="#14303f">${n} loyang kue</text></svg>`}
+function sceneU(run){const u=S1.u,o=uInfo(u),bw=Math.min(44,Math.floor(400/u.a)),x0=90,bh=34,ya=24,yn=68;
+let s=`<svg viewBox="0 0 560 120" role="img" aria-label="Model batang rasio usia Ayah : Anak = ${u.a} : ${u.b}"><rect width="560" height="120" rx="10" fill="#f7fbfd"/>`;
+const rows=[['Ayah',u.a,ya,'#0b6fa4',o.ayah,'ayah'],['Anak',u.b,yn,'#e8791a',o.anak,'anak']];
+rows.forEach(r=>{s+=`<text x="8" y="${r[2]+bh/2+5}" font-size="14" font-weight="700" fill="#14303f">${r[0]}</text>`;
+for(let i=0;i<r[1];i++)s+=`<g ${run?`style="animation:pop .4s ${i*50}ms backwards;transform-box:fill-box;transform-origin:center"`:''}><rect x="${x0+i*bw}" y="${r[2]}" width="${bw-3}" height="${bh}" rx="5" fill="${r[3]}"/>${run?`<text x="${x0+i*bw+(bw-3)/2}" y="${r[2]+bh/2+5}" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">${u.m}</text>`:''}</g>`;
+const ex=x0+r[1]*bw+4,asked=r[5]==u.ask,knownRow=u.mode=='salah'&&!asked;
+let t=run?`= ${nf(r[4])} tahun`:u.mode=='salah'?(asked?'= ?':`= ${nf(o.v)} tahun`):(asked?'= ?':'');
+if(t)s+=`<text x="${ex}" y="${r[2]+bh/2+5}" font-size="12.5" font-weight="700" fill="${run&&asked?'#1d9a57':asked?'#d65a55':'#14303f'}">${t}</text>`});
+const mxx=x0+Math.max(u.a,u.b)*bw+8;
+if(u.mode=='jumlah')s+=`<path d="M${mxx+78} ${ya}h6v${yn+bh-ya}h-6" fill="none" stroke="#1d9a57" stroke-width="2"/><text x="${mxx+86}" y="${(ya+yn+bh)/2+4}" font-size="11" font-weight="700" fill="#1d9a57">jumlah</text><text x="${mxx+86}" y="${(ya+yn+bh)/2+17}" font-size="11" font-weight="700" fill="#1d9a57">${nf(o.v)}</text>`;
+if(u.mode=='selisih'){const x1=x0+u.b*bw,x2=x0+u.a*bw-3;s+=`<path d="M${x1} ${ya-4}v-6h${x2-x1}v6" fill="none" stroke="#1d9a57" stroke-width="2"/><text x="${(x1+x2)/2}" y="${ya-13}" text-anchor="middle" font-size="11" font-weight="700" fill="#1d9a57">selisih = ${nf(o.v)} tahun</text>`}
+return s+`<text x="8" y="112" font-size="11" fill="#456">1 kotak = ${run?u.m+' tahun':'k tahun (nilainya dicari)'} · Ayah : Anak = ${u.a} : ${u.b}</text></svg>`}
+function sceneMach(){if(!S3.mode)return'';const m=S3.mode,k=S3.k,x=S3.x,y=f3(m,k,x);
+return`<svg viewBox="0 0 560 62" role="img" aria-label="Mesin: masukan x = ${x}, keluaran y = ${nf(y)}"><rect x="10" y="12" width="110" height="38" rx="10" fill="#e3f3fb" stroke="#0b6fa4" stroke-width="2"/><text x="65" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#14303f">x = ${x}</text><path d="M122 31h46" stroke="#345" stroke-width="3"/><path d="M174 31l-9-6v12z" fill="#345"/><rect x="178" y="6" width="210" height="50" rx="12" fill="#fff7e8" stroke="#e8791a" stroke-width="2"/><g class="spin"><circle cx="208" cy="31" r="12" fill="none" stroke="#e8791a" stroke-width="5" stroke-dasharray="4.2 3.4"/><circle cx="208" cy="31" r="5" fill="#e8791a"/></g><text x="306" y="37" text-anchor="middle" font-size="16" font-weight="800" fill="#14303f">${eq(m,k)}</text><path d="M390 31h46" stroke="#345" stroke-width="3"/><path d="M442 31l-9-6v12z" fill="#345"/><rect x="446" y="12" width="104" height="38" rx="10" fill="#e7f7ee" stroke="#1d9a57" stroke-width="2"/><text x="498" y="37" text-anchor="middle" font-size="15" font-weight="700" fill="#14303f">y = ${nf(y)}</text></svg>`}
+/* ===== Proyek Tukang: kasus-kasus ===== */
+const CN={awal:'Ubah jumlah pekerja sejak awal',henti:'Berhenti lalu dilanjutkan',ubah:'Pekerja ditambah/dikurangi',cepat:'Waktu dipercepat',kejar:'Berhenti, lalu kejar jadwal'};
+const KS={awal:['p','h','p2'],henti:['p','h','d1','g'],ubah:['p','h','d1','p2'],cepat:['p','h','d1','T'],kejar:['p','h','d1','g']};
+let RAF2=0,TP=0;
+const tkSpec=(t,k)=>({p:{l:'Pekerja rencana',u:'orang',min:2,max:20},h:{l:'Waktu rencana',u:'hari',min:4,max:30},d1:{l:'Sudah dikerjakan',u:'hari',min:1,max:t.h-2},g:{l:'Berhenti',u:'hari',min:1,max:Math.min(10,t.h-t.d1-1)},p2:{l:t.cs=='awal'?'Jumlah pekerja':'Pekerja setelah lanjut',u:'orang',min:1,max:24},T:{l:'Target selesai hari ke-',u:'',min:t.d1+1,max:t.h-1}})[k];
+function tkNorm(t){t.p=cl(t.p,2,20);t.h=cl(t.h,4,30);t.d1=cl(t.d1,1,t.h-2);t.g=cl(t.g,1,Math.min(10,t.h-t.d1-1));t.T=cl(t.T,t.d1+1,t.h-1);t.p2=cl(t.p2,1,24)}
+function tkCalc(t){const W=t.p*t.h;let d1=t.d1,g=t.g,p2=t.p2,avail=null,need=null;
+if(t.cs=='awal'){d1=0;g=0}if(t.cs=='henti'){p2=t.p}if(t.cs=='ubah'||t.cs=='cepat')g=0;
+const done=t.p*d1,R=W-done;
+if(t.cs=='cepat'){avail=t.T-d1;need=R/avail;p2=Math.ceil(need)}
+if(t.cs=='kejar'){avail=t.h-d1-g;need=R/avail;p2=Math.ceil(need)}
+const tail=R/p2,total=d1+g+tail;return{W,d1,g,p2,done,R,avail,need,tail,total,delta:total-t.h}}
+function tkcfg(t){const c=tkCalc(t),mx=Math.max(24,c.p2);return{t:'Proyek Tukang Bangunan',type:'berbalik',xl:t.cs=='awal'?'Jumlah pekerja':'Pekerja lanjutan',xu:'orang',yl:t.cs=='awal'?'Waktu selesai':'Sisa waktu',yu:'hari',f:x=>c.R/x,min:1,max:mx,xs:[1,2,3,4,6,8,12,24].filter(v=>v<=mx)}}
+function tkSync(){tkNorm(S1.tk);Object.assign(SC.tukang,tkcfg(S1.tk));S1.x=tkCalc(S1.tk).p2}
+const dtxt=(d,h)=>d>1e-9?`terlambat ${nf(d)} hari dari rencana ${h} hari`:d<-1e-9?`lebih cepat ${nf(-d)} hari dari rencana ${h} hari`:`tepat sesuai rencana ${h} hari`;
+function tkTxt(t){const c=tkCalc(t);return`${CN[t.cs]}: beban kerja ${c.W} orang-hari${t.cs!='awal'?`, sisa ${c.R} orang-hari`:''}; ${c.p2} pekerja${t.cs=='awal'?'':' setelah dilanjutkan'} → selesai pada hari ke-${nf(c.total)} (${dtxt(c.delta,t.h)}).`}
+function mT(){const t=S1.tk,cf_=mcfg_t();
+const sl=k=>{const sp=tkSpec(t,k);return`<div><label for="tk_${k}">${sp.l}: <b id="tv_${k}">${t[k]} ${sp.u}</b></label><input id="tk_${k}" type="range" min="${sp.min}" max="${sp.max}" step="1" value="${t[k]}" oninput="tkSet('${k}',this.value)"></div>`};
+$('#main').innerHTML=`<div class="card"><h2>Proyek Tukang Bangunan <span class="pill berbalik">Berbalik nilai</span></h2><div id="tscn">${sceneT(TP)}</div>
+<div class="row" style="flex-wrap:wrap;gap:4px;margin:4px 0">${Object.keys(CN).map(k=>`<button class="seg ${t.cs==k?'on':''}" style="flex:1 1 31%" aria-pressed="${t.cs==k}" onclick="tkCase('${k}')">${CN[k]}</button>`).join('')}</div>
+<div class="sl2">${KS[t.cs].map(sl).join('')}</div><p class="const" id="tinfo" style="padding:3px 8px;font-size:12.5px;margin:4px 0">${tinfo()}</p>
+<p style="text-align:center;margin:2px"><button class="go" onclick="run1()">▶ Jalankan Simulasi</button></p></div>`}
+const mcfg_t=()=>0;
+function tinfo(){const t=S1.tk,c=tkCalc(t);return`Beban kerja W = ${t.p} × ${t.h} = ${c.W} orang-hari`+(t.cs=='cepat'||t.cs=='kejar'?' · dicari: banyak pekerja yang dibutuhkan':t.cs=='henti'?' · dicari: waktu selesai (pekerja tetap)':' · dicari: waktu selesai')}
+function tkReset(){S1.res=null;S1.cmp=false;TP=0;cancelAnimationFrame(RAF2);mark('1:set');step('set')}
+function tkRefresh(){const t=S1.tk;KS[t.cs].forEach(k=>{const sp=tkSpec(t,k),e=$('#tk_'+k);if(e){e.min=sp.min;e.max=sp.max;e.value=t[k]}const v=$('#tv_'+k);if(v)v.textContent=t[k]+' '+sp.u});const i=$('#tinfo');if(i)i.textContent=tinfo();const e=$('#tscn');if(e)e.innerHTML=sceneT(TP)}
+function tkSet(k,v){S1.tk[k]=+v;tkSync();tkReset();tkRefresh();r1()}
+function tkCase(cs){const t=S1.tk;t.cs=cs;t.p2=cs=='awal'?t.p:Math.round(t.p*4/3);tkSync();tkReset();mT();r1()}
+function runT(){const t=S1.tk,c=tkCalc(t),x=S1.x,y=c.R/x;S1.res={x,y};mark('1:run');step('run');step('obs');
+F[1].tukang=tkTxt(t);obs(1,'Proyek Tukang — '+tkTxt(t));animT();r1()}
+function animT(){cancelAnimationFrame(RAF2);if(matchMedia('(prefers-reduced-motion:reduce)').matches){TP=1;const e=$('#tscn');if(e)e.innerHTML=sceneT(1);return}
+const t0=performance.now(),D=3600,f=n=>{TP=Math.min(1,(n-t0)/D);const e=$('#tscn');if(!e)return;e.innerHTML=sceneT(TP);if(TP<1)RAF2=requestAnimationFrame(f)};RAF2=requestAnimationFrame(f)}
+function sceneT(p){const t=S1.tk,c=tkCalc(t),p1=t.cs=='awal'?c.p2:t.p,W=c.W,Tm=Math.max(t.h,c.total)+1,Wm=Math.max(p1,c.p2,t.p)*1.2;
+const x0=190,x1=545,yb=140,yt=22,sx=(x1-x0)/Tm,sy=(yb-yt)/Wm,tau=p*c.total,mx=x0+tau*sx;
+const wk=tau<=c.d1?p1*tau:tau<=c.d1+c.g?p1*c.d1:p1*c.d1+c.p2*(tau-c.d1-c.g),pr=Math.min(1,wk/W),cur=p==0?p1:(tau<c.d1?p1:tau<c.d1+c.g?0:c.p2);
+let s=`<svg viewBox="0 0 560 172" role="img" aria-label="Proyek bangunan: ${t.p} pekerja, rencana ${t.h} hari, perkiraan selesai hari ke-${nf(c.total)}"><rect width="560" height="172" rx="10" fill="#f4f9fc"/><rect y="140" width="170" height="32" fill="#c9d6c0"/>`;
+s+=`<rect x="28" y="72" width="114" height="68" fill="#fff" stroke="#6b7280" stroke-dasharray="4 3"/><clipPath id="bw"><rect x="28" y="${(140-68*pr).toFixed(1)}" width="114" height="${(68*pr).toFixed(1)}"/></clipPath><g clip-path="url(#bw)"><rect x="28" y="72" width="114" height="68" fill="#d98b5f"/>${[0,1,2,3,4,5,6,7].map(i=>`<line x1="28" x2="142" y1="${80+i*8}" y2="${80+i*8}" stroke="#fff" stroke-opacity=".7"/>`).join('')}</g><rect x="28" y="72" width="114" height="68" fill="none" stroke="#6b7280" stroke-width="1.5"/><path d="M20 72L85 38l65 34z" fill="${pr>=1?'#a0522d':'none'}" stroke="#6b7280" stroke-dasharray="${pr>=1?0:'4 3'}"/>`;
+for(let i=0;i<10;i++){const wx=26+i*13,on=i<cur;s+=`<circle cx="${wx}" cy="14" r="3.5" fill="${on?'#0b6fa4':'#cfd8de'}"/><path d="M${wx} 18v8M${wx-4} 22h8" stroke="${on?'#0b6fa4':'#cfd8de'}" stroke-width="2"/>`}
+s+=`<text x="85" y="62" text-anchor="middle" font-size="11" font-weight="700" fill="#14303f">${cur} pekerja${cur>10?' (10 tampak)':''}${cur==0&&p>0?' — berhenti':''}</text><text x="85" y="158" text-anchor="middle" font-size="11" font-weight="700" fill="#14303f">Progres ${Math.round(pr*100)}%</text>`;
+const R1=[x0,yb-p1*sy,c.d1*sx,p1*sy],R2=[x0+(c.d1)*sx,yb-p1*sy,c.g*sx,p1*sy],R3=[x0+(c.d1+c.g)*sx,yb-c.p2*sy,c.tail*sx,c.p2*sy];
+const rects=(a,b,cc,dd)=>(c.d1>0?`<rect x="${R1[0]}" y="${R1[1]}" width="${R1[2]}" height="${R1[3]}" fill="${a}"/>`:'')+(c.g>0?`<rect x="${R2[0]}" y="${R2[1]}" width="${R2[2]}" height="${R2[3]}" fill="${cc}" stroke="#8b96a3" stroke-dasharray="3 2"/>`:'')+`<rect x="${R3[0]}" y="${R3[1]}" width="${R3[2]}" height="${R3[3]}" fill="${b}"/>`;
+s+=`<line x1="${x0}" y1="${yb}" x2="${x1}" y2="${yb}" stroke="#345"/><line x1="${x0}" y1="${yt-6}" x2="${x0}" y2="${yb}" stroke="#345"/><text x="${x0-4}" y="${yt}" text-anchor="end" font-size="10" fill="#456">pekerja</text>`;
+const stp=Math.max(1,Math.ceil(Tm/10));for(let d=0;d<=Tm;d+=stp)s+=`<line x1="${x0+d*sx}" x2="${x0+d*sx}" y1="${yb}" y2="${yb+4}" stroke="#345"/><text x="${x0+d*sx}" y="${yb+15}" text-anchor="middle" font-size="10" fill="#456">${d}</text>`;
+s+=`<text x="${x1}" y="${yb+28}" text-anchor="end" font-size="10" fill="#456">hari ke-</text>`+rects('#cfe3f1','#fde3c7','#eceff2');
+s+=`<clipPath id="tc"><rect x="0" y="0" width="${mx.toFixed(1)}" height="172"/></clipPath><g clip-path="url(#tc)">${rects('#0b6fa4','#e8791a','#b5bec8')}</g>`;
+s+=`<rect x="${x0}" y="${yb-t.p*sy}" width="${t.h*sx}" height="${t.p*sy}" fill="none" stroke="#1d9a57" stroke-width="2" stroke-dasharray="6 4"/><text x="${x0+t.h*sx-3}" y="${yb-t.p*sy-4}" text-anchor="end" font-size="10" font-weight="700" fill="#1d9a57">rencana ${t.h} hari (${t.p} pekerja)</text>`;
+if(R1[2]>34)s+=`<text x="${R1[0]+R1[2]/2}" y="${yb-6}" text-anchor="middle" font-size="10.5" font-weight="700" fill="${p>0?'#fff':'#0b6fa4'}">${p1}×${c.d1}</text>`;
+if(R2[2]>26)s+=`<text x="${R2[0]+R2[2]/2}" y="${yb-6}" text-anchor="middle" font-size="9.5" font-weight="700" fill="#556">henti ${c.g}</text>`;
+if(R3[2]>34)s+=`<text x="${R3[0]+R3[2]/2}" y="${yb-6}" text-anchor="middle" font-size="10.5" font-weight="700" fill="${p>0?'#fff':'#b85c0f'}">${c.p2}×${nf(c.tail)}</text>`;
+s+=`<line x1="${mx}" y1="${yt-8}" x2="${mx}" y2="${yb}" stroke="#d65a55" stroke-width="2"/><text x="${Math.min(mx+4,x1-60)}" y="${yt-10}" font-size="10.5" font-weight="700" fill="#d65a55">hari ke-${nf(tau)}</text>`;
+return s+'</svg>'}
+function tkSteps(t){const c=tkCalc(t),L=[`Hitung beban kerja total: W = pekerja × hari = ${t.p} × ${t.h} = <b>${c.W}</b> orang-hari.`];
+if(t.cs=='awal'){L.push(`Jumlah pekerja diubah menjadi ${c.p2} orang sejak awal. Beban kerja tetap, jadi pekerja × hari selalu ${c.W} (berbalik nilai).`);L.push(`Waktu = W ÷ pekerja = ${c.W} ÷ ${c.p2} = <b>${nf(c.tail)} hari</b>.`)}
+else{L.push(`Pekerjaan selesai setelah ${c.d1} hari: ${t.p} × ${c.d1} = ${c.done} orang-hari.`);L.push(`Sisa pekerjaan: R = ${c.W} − ${c.done} = <b>${c.R}</b> orang-hari.`);
+if(t.cs=='henti'){L.push(`Proyek berhenti ${c.g} hari. Tidak ada pekerjaan yang bertambah, sisa tetap ${c.R} orang-hari.`);L.push(`Dilanjutkan dengan ${t.p} pekerja yang sama: waktu sisa = R ÷ pekerja = ${c.R} ÷ ${t.p} = <b>${nf(c.tail)} hari</b>.`)}
+if(t.cs=='ubah'){L.push(`Pekerja ${c.p2>t.p?'ditambah':c.p2<t.p?'dikurangi':'tidak berubah'} dari ${t.p} menjadi ${c.p2} orang (${c.p2>t.p?'+':''}${c.p2-t.p}).`);L.push(`Waktu sisa = R ÷ pekerja baru = ${c.R} ÷ ${c.p2} = <b>${nf(c.tail)} hari</b>.`)}
+if(t.cs=='cepat'||t.cs=='kejar'){L.push(t.cs=='cepat'?`Proyek harus selesai pada hari ke-${t.T}. Waktu tersedia = ${t.T} − ${c.d1} = ${c.avail} hari.`:`Proyek berhenti ${c.g} hari, tetapi harus selesai tepat waktu pada hari ke-${t.h}. Waktu tersedia = ${t.h} − ${c.d1} − ${c.g} = ${c.avail} hari.`);
+L.push(`Pekerja dibutuhkan = R ÷ waktu tersedia = ${c.R} ÷ ${c.avail} = ${nf(c.need)} → dibulatkan ke atas <b>${c.p2} orang</b> (tambahan ${c.p2-t.p} orang).`);L.push(`Waktu sisa sebenarnya = ${c.R} ÷ ${c.p2} = <b>${nf(c.tail)} hari</b>.`)}}
+L.push(`Total waktu = ${c.d1} + ${c.g} + ${nf(c.tail)} = <b>${nf(c.total)} hari</b> → ${dtxt(c.delta,t.h)}.`);
+return`<div class="card"><h3>Langkah Pengerjaan — ${CN[t.cs]}</h3><ol class="stp">${L.map(x=>`<li>${x}</li>`).join('')}</ol></div>`}
+
+/* ===== Resep Kue: loyang, tepung, air (aturan resep dapat diubah) ===== */
+const kcfg=k=>({t:'Resep Kue',type:'senilai',xl:'Jumlah loyang',xu:'loyang',yl:k.view=='tepung'?'Tepung':'Air',yu:k.view=='tepung'?'kg':'ml',f:x=>k.view=='tepung'?k.rt*x:k.ra*x,min:1,max:20,xs:[2,4,6,8,10]});
+function kSync(){Object.assign(SC.kue,kcfg(S1.kk))}
+const gcd=(a,b)=>b?gcd(b,a%b):a;
+function kRat(k){const g=Math.round(k.rt*1000),w=Math.round(k.ra),d=gcd(g,w)||1;return`${nf(g/d)} : ${nf(w/d)}`}
+const ku=k=>({loyang:['Jumlah loyang kue',1,'loyang'],tepung:['Tepung yang diketahui',k.rt,'kg'],air:['Air yang diketahui',k.ra,'ml']});
+function kChips(){const n=S1.x,k=S1.kk,m=k.mode;return[['loyang','Loyang kue',nf(n),'loyang'],['tepung','Tepung',nf(k.rt*n),'kg'],['air','Air',nf(k.ra*n),'ml']].map(a=>`<div class="chip ${m==a[0]?'on':''}">${a[1]}<b>${a[2]} ${a[3]}</b>${m==a[0]?'diketahui':'dihitung'}</div>`).join('')}
+function mK(){const kk=S1.kk,n=S1.x,[u,f,un]=ku(kk)[kk.mode];
+$('#main').innerHTML=`<div class="card"><h2>Resep Kue <span class="pill senilai">Senilai</span></h2>
+<div class="inp" style="margin:2px 0"><label>Aturan resep (bisa diubah): 1 loyang =</label><input id="rt" type="number" min="0.05" step="0.05" value="${kk.rt}" style="width:84px" aria-label="Tepung per loyang dalam kilogram" oninput="kRule('rt',this.value)"><span style="font-size:13px">kg tepung +</span><input id="ra" type="number" min="5" step="5" value="${kk.ra}" style="width:84px" aria-label="Air per loyang dalam mililiter" oninput="kRule('ra',this.value)"><span style="font-size:13px">ml air</span></div>
+<div id="vis" aria-hidden="true">${sceneK(false)}</div>
+<div class="row" style="margin:4px 0"><label>Yang diketahui:</label>${[['loyang','Loyang'],['tepung','Tepung'],['air','Air']].map(a=>`<button class="seg ${kk.mode==a[0]?'on':''}" aria-pressed="${kk.mode==a[0]}" onclick="kMode('${a[0]}')">${a[1]}</button>`).join('')}</div>
+<label for="sl">${u}: <b id="xv">${nf(n*f)} ${un}</b></label><div class="row"><button class="sm" aria-label="Kurangi" onclick="kNud(-1)">−</button><input id="sl" type="range" min="1" max="20" step="1" value="${n}" oninput="kSet(this.value)"><button class="sm" aria-label="Tambah" onclick="kNud(1)">+</button></div>
+<div class="row" id="kchips" style="gap:6px;margin:4px 0">${kChips()}</div>
+<div class="row" style="margin:2px 0"><label>Grafik loyang dengan:</label>${[['tepung','Tepung'],['air','Air']].map(a=>`<button class="seg ${kk.view==a[0]?'on':''}" aria-pressed="${kk.view==a[0]}" onclick="kView('${a[0]}')">${a[1]}</button>`).join('')}</div>
+<p style="text-align:center;margin:4px"><button class="go" onclick="run1()">▶ Jalankan Simulasi</button></p></div>`}
+function kRefresh(){const[u,f,un]=ku(S1.kk)[S1.kk.mode];$('#xv').textContent=nf(S1.x*f)+' '+un;$('#kchips').innerHTML=kChips();$('#vis').className='';vis()}
+function kRule(f,v){v=parseFloat(String(v).replace(',','.'));if(!(v>0)||v>(f=='rt'?1000:100000))return;S1.kk[f]=v;kSync();S1.res=null;S1.cmp=false;mark('1:set');step('set');kRefresh();r1()}
+function kSet(v){S1.x=+v;S1.res=null;S1.cmp=false;mark('1:set');step('set');kRefresh();r1()}
+function kNud(d){const v=cl(S1.x+d,1,20);$('#sl').value=v;kSet(v)}
+function kMode(m){S1.kk.mode=m;mK()}
+function kView(v){S1.kk.view=v;kSync();S1.res=null;S1.cmp=false;mK();r1()}
+function runK(){const n=S1.x,k=S1.kk,c=SC.kue,y=c.f(n);S1.res={x:n,y};mark('1:run');step('run');step('obs');
+F[1].kue=`Aturan resep: 1 loyang = ${nf(k.rt)} kg tepung + ${nf(k.ra)} ml air. ${nf(n)} loyang kue memerlukan ${nf(k.rt*n)} kg tepung dan ${nf(k.ra*n)} ml air; ${kc(c,n,y)} (tetap), sehingga senilai. Perbandingan tepung : air = ${nf(k.rt*n*1000)} g : ${nf(k.ra*n)} ml = ${kRat(k)}.`;
+obs(1,`Resep Kue (1 loyang = ${nf(k.rt)} kg + ${nf(k.ra)} ml): ${nf(n)} loyang → ${nf(k.rt*n)} kg tepung dan ${nf(k.ra*n)} ml air; ${kc(c,n,y)}.`);$('#vis').className='run';vis();r1()}
+function resK(btn){const c=SC.kue,k=S1.kk,R=S1.res,n=R.x,xs=[...new Set([...c.xs,n])].sort((a,b)=>a-b);
+return`<div class="card"><h3>Tabel Nilai — Resep Kue</h3><table><tr><th>Loyang</th><th>Tepung (kg)</th><th>Air (ml)</th></tr>${xs.map(v=>`<tr class="${v==n?'hl':''}"><td>${v}</td><td>${nf(k.rt*v)}</td><td>${nf(k.ra*v)}</td></tr>`).join('')}</table>
+<p class="const">Tepung ÷ loyang = ${nf(k.rt*n)} ÷ ${n} = ${nf(k.rt)} kg · Air ÷ loyang = ${nf(k.ra*n)} ÷ ${n} = ${nf(k.ra)} ml (tetap)</p><p class="narr">Tepung : air = ${nf(k.rt*n*1000)} g : ${nf(k.ra*n)} ml = ${kRat(k)} (selalu tetap). Semakin banyak loyang, semakin banyak tepung dan air → senilai.</p>${g1('kue',n,R.y,'#0b6fa4',400,170,'g')}${btn}</div>`}
 /* ===== STASIUN 2 ===== */
 const PX=40,MW=560,MH=330;
 const cmNow=()=>Math.hypot(S2.pb.x-S2.pa.x,S2.pb.y-S2.pa.y)/PX,kmNow=()=>S2.cm*S2.n/1e5;
-function tg2(t){S2.tools[t]=!S2.tools[t];mark('2:pick');step('pick');side();drawMap();toast(S2.tools[t]?'Alat diaktifkan':'Alat dimatikan')}
+function tg2(t){S2.tools[t]=!S2.tools[t];mark('2:pick');step('pick');side();m2();toast(S2.tools[t]?'Alat diaktifkan':'Alat dimatikan')}
 function m2(){$('#main').innerHTML=`<div class="card"><h2>Peta Rimba <span class="pill senilai">Skala</span></h2><p>${S2.tools.pin?'Tarik pin A dan B pada peta, atau ubah angka di bawah.':'Aktifkan <b>Pin Titik A–B</b> di kolom kiri untuk menggeser titik. Aktifkan <b>Penggaris</b> untuk melihat ukuran cm.'}</p><div id="mapw"></div>
 <div class="inp"><label for="icm">Jarak pada peta (cm)</label><input id="icm" type="number" min="0.5" step="0.1" oninput="e2('cm',this.value)"><label for="in">Skala 1 :</label><input id="in" type="number" min="1000" step="1000" oninput="e2('n',this.value)"><label for="ikm">Jarak sebenarnya (km)</label><input id="ikm" type="number" min="0" step="0.5" oninput="e2('km',this.value)"></div>
 <div>${[100000,250000,500000,1000000].map(n=>`<button class="pre" onclick="pre2(${n})">1 : ${nf(n)}</button>`).join('')}</div><p class="formula" id="fm" style="margin-top:6px"></p></div>`;drawMap();upd2()}
 function drawMap(){const w=$('#mapw');if(!w)return;const a=S2.pa,b=S2.pb,m=S2.tools.peta,r=S2.tools.ruler,p=S2.tools.pin;let s=`<svg viewBox="0 0 ${MW} ${MH}" id="msv" role="img" aria-label="Peta Rimba dengan pin A dan B, jarak ${nf(S2.cm)} cm"><rect width="${MW}" height="${MH}" fill="${m?'#d3ebc8':'#f4f7f8'}"/>`;
 if(m){s+=`<path d="M0 60C120 20 200 120 320 80S500 10 560 60V0H0z" fill="#b9dca4"/><path d="M-5 190C100 140 160 250 280 200S450 130 565 230" stroke="#79c2ea" stroke-width="16" fill="none"/><path d="M40 320C150 270 300 300 420 250S520 200 560 180" stroke="#c9a86a" stroke-width="4" stroke-dasharray="10 6" fill="none"/><polygon points="430,60 470,10 510,60" fill="#8fbf7a"/><polygon points="470,70 505,25 540,70" fill="#7fb06a"/>${[[60,60],[90,90],[40,110],[500,290],[470,310]].map(c=>`<circle cx="${c[0]}" cy="${c[1]}" r="12" fill="#5a9d63"/>`).join('')}`;if(MAPIMG)s+=`<image href="${MAPIMG}" width="${MW}" height="${MH}" preserveAspectRatio="none"/>`}
 if(r){for(let i=1;i<MW/PX;i++)s+=`<line x1="${i*PX}" x2="${i*PX}" y2="${MH}" stroke="#0003"/>`;for(let i=1;i<MH/PX;i++)s+=`<line y1="${i*PX}" y2="${i*PX}" x2="${MW}" stroke="#0003"/>`;s+=`<text x="4" y="12" font-size="11" fill="#245">1 kotak = 1 cm di peta</text>`}
-s+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#e8791a" stroke-width="4" ${S2.anim?'pathLength="1" style="stroke-dasharray:1;stroke-dashoffset:1;animation:dd 1s forwards"':''}/>`;
+s+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#e8791a" stroke-width="4" ${S2.anim?'pathLength="1" style="animation:dd 1s forwards"':''}/>`;
 if(r)s+=`<rect x="${(a.x+b.x)/2-34}" y="${(a.y+b.y)/2-24}" width="68" height="22" rx="8" fill="#fff"/><text x="${(a.x+b.x)/2}" y="${(a.y+b.y)/2-8}" text-anchor="middle" font-size="14" font-weight="700" fill="#e8791a">${nf(S2.cm)} cm</text>`;
+s+=`<g><rect x="10" y="${MH-30}" width="160" height="22" rx="8" fill="#fff" opacity=".92"/><rect x="16" y="${MH-17}" width="${PX}" height="5" fill="#14303f"/><text x="${16+PX+6}" y="${MH-12}" font-size="11" font-weight="700" fill="#14303f">1 cm = ${nf(S2.n/1e5)} km</text></g><g transform="translate(${MW-24},26)"><path d="M0 -16l7 20h-14z" fill="#d65a55"/><text y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#14303f">U</text></g>`;
 [['A',a,'#0b6fa4'],['B',b,'#d65a55']].forEach(q=>s+=`<g class="pin" data-pin="${q[0]}" ${p?'':'opacity=".55"'}><circle cx="${q[1].x}" cy="${q[1].y}" r="26" fill="transparent"/><circle cx="${q[1].x}" cy="${q[1].y}" r="16" fill="${q[2]}" stroke="#fff" stroke-width="3"/><text x="${q[1].x}" y="${q[1].y+5}" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">${q[0]}</text></g>`);
 w.innerHTML=s+'</svg>'}
 function ptr(e){const sv=$('#msv'),p=sv.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(sv.getScreenCTM().inverse())}
@@ -190,7 +384,7 @@ function run2(){S2.ran=true;S2.anim=true;mark('2:run');step('run');step('obs');c
 function sv2(w){if(!S2.ran)return toast('Jalankan simulasi dulu sebelum menyimpan.','bad');S2[w]={cm:S2.cm,n:S2.n,km:kmNow()};mark('2:'+w);step('save');obs(2,`Peta ${w} disimpan: ${nf(S2.cm)} cm, skala 1 : ${nf(S2.n)}, ${nf(kmNow())} km.`);toast('Peta '+w+' tersimpan','ok');r2()}
 function same2(){if(!S2.A)return toast('Simpan Peta A dahulu.','bad');chg2();setCm(S2.A.km*1e5/S2.n);drawMap();upd2();toast('Jarak sebenarnya disamakan: '+nf(S2.A.km)+' km','ok')}
 function cmp2(){if(!S2.A||!S2.B)return toast('Simpan Peta A dan B terlebih dahulu.','bad');S2.cmp=!S2.cmp;if(S2.cmp){mark('2:cmp');step('cmp');const a=S2.A,b=S2.B,sm=Math.abs(a.km-b.km)<.01;
-F.c[2]=sm?`Jarak sebenarnya sama (${nf(a.km)} km), tetapi skala 1 : ${nf(a.n)} memberi ${nf(a.cm)} cm dan skala 1 : ${nf(b.n)} memberi ${nf(b.cm)} cm. Semakin besar n, semakin pendek jarak pada peta.`:`Jarak sebenarnya berbeda: ${nf(a.km)} km dan ${nf(b.km)} km.`;obs(2,'Membandingkan peta A dan B. '+F.c[2])}r2()}
+F.c[2]=sm&&a.n==b.n?`Skala dan jarak sebenarnya sama, jadi jarak pada peta juga sama. Ganti skala Peta B agar perbedaannya terlihat.`:sm?`Jarak sebenarnya sama (${nf(a.km)} km), tetapi skala 1 : ${nf(a.n)} memberi ${nf(a.cm)} cm dan skala 1 : ${nf(b.n)} memberi ${nf(b.cm)} cm. Semakin besar n, semakin pendek jarak pada peta.`:`Jarak sebenarnya berbeda: ${nf(a.km)} km dan ${nf(b.km)} km.`;obs(2,'Membandingkan peta A dan B. '+F.c[2])}r2()}
 function r2(){const a=S2.A,b=S2.B;let h=`<div class="card"><h3>Panel Hasil Dua Arah</h3><table><tr><th>Jarak pada Peta</th><th>Skala</th><th>Jarak Sebenarnya</th></tr><tr class="hl"><td>${nf(S2.cm)} cm</td><td>1 : ${nf(S2.n)}</td><td>${nf(kmNow())} km</td></tr></table>
 <p class="narr">Ubah salah satu nilai (geser pin atau ketik angka), dua nilai lainnya terhitung otomatis. Satuan: 1 km = 100.000 cm.</p>${S2.ran?`<p class="const">${F[2]}</p>`:''}
 <p><button class="go" onclick="run2()">▶ Jalankan Simulasi</button></p><button class="sv" onclick="sv2('A')">💾 Simpan A${a?' ✓':''}</button><button class="sv o" onclick="sv2('B')">💾 Simpan B${b?' ✓':''}</button><button class="sv g" onclick="same2()">= Samakan jarak sebenarnya dengan A</button><button class="sv g" onclick="cmp2()">⇄ ${S2.cmp?'Tutup':'Bandingkan'}</button></div>`;
@@ -202,12 +396,12 @@ const D3={lin:{x0:0,x1:10,y1:200},hyp:{x0:.5,x1:10,y1:40}};
 const eq=(m,k)=>m=='lin'?'y = '+(k==1?'':k)+'x':'y = '+k+'/x',f3=(m,k,x)=>m=='lin'?k*x:k/x,mn=m=>m=='lin'?'Senilai (garis lurus melalui titik asal)':'Berbalik nilai (kurva hiperbola)';
 function pick3(m){S3.mode=m;S3.cmp=false;mark('3:pick');step('pick');S3.q=null;render()}
 function m3(){if(!S3.mode)return $('#main').innerHTML='<div class="card empty"><h2>Mesin Grafik & Rumus</h2><p>Pilih mode <b>y = k·x</b> atau <b>y = k/x</b> di kolom kiri.</p></div>';
-$('#main').innerHTML=`<div class="card"><h2>${eq(S3.mode,S3.k)} <span class="pill ${S3.mode=='lin'?'senilai':'berbalik'}">${S3.mode=='lin'?'Senilai':'Berbalik nilai'}</span></h2><div id="g3"></div>
+$('#main').innerHTML=`<div class="card"><h2>${eq(S3.mode,S3.k)} <span class="pill ${S3.mode=='lin'?'senilai':'berbalik'}">${S3.mode=='lin'?'Senilai':'Berbalik nilai'}</span></h2><div id="mch" style="margin-bottom:6px">${sceneMach()}</div><div id="g3"></div>
 <div class="row"><label for="kk" style="width:120px">Nilai k: <b id="kv">${S3.k}</b></label><button class="sm" aria-label="Kurangi k" onclick="nk(-1)">−</button><input id="kk" type="range" min="1" max="20" step="1" value="${S3.k}" oninput="sk(this.value)"><button class="sm" aria-label="Tambah k" onclick="nk(1)">+</button></div>
 <div class="row"><label style="flex:1"><input type="checkbox" id="both" ${S3.both?'checked':''} onchange="S3.both=this.checked;dg3()"> Tampilkan kedua kurva (garis & hiperbola)</label><button class="go" onclick="run3()">▶ Jalankan Simulasi</button></div><p style="font-size:12px;margin:2px">Tarik titik oranye pada grafik: nilai k, x, dan y ikut berubah.</p></div>`;dg3()}
 function dg3(){const g=$('#g3');if(!g)return;const D=D3[S3.mode],m=S3.mode,k=S3.k;const ser=[{f:x=>f3(m,k,x),c:'#0b6fa4',pts:[1,2,3,4,5,6].map(x=>[x,f3(m,k,x)]),hl:[S3.x,f3(m,k,S3.x)],big:1}];
 if(S3.both){const o=m=='lin'?'hyp':'lin';ser.push({f:x=>f3(o,k,x),c:'#e8791a'})}
-const r=graph({w:600,h:300,id:'m',x0:D.x0,x1:D.x1,y1:D.y1,ser,anim:S3.anim,al:'Grafik '+eq(m,k)});G3=r.m;g.innerHTML=r.svg}
+const r=graph({w:600,h:300,id:'m',x0:D.x0,x1:D.x1,y1:D.y1,ser,anim:S3.anim,al:'Grafik '+eq(m,k)});G3=r.m;g.innerHTML=r.svg;const mc=$('#mch');if(mc)mc.innerHTML=sceneMach()}
 let G3={l:44,r:12,t:12,b:32};
 function dr3(e){const sv=$('#g3 svg');if(!sv)return;const p=sv.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(sv.getScreenCTM().inverse()),D=D3[S3.mode],m=G3;
 let x=D.x0+(q.x-m.l)/(600-m.l-m.r)*(D.x1-D.x0),y=(300-m.b-q.y)/(300-m.t-m.b)*D.y1;x=cl(Math.round(x),1,10);const k=cl(Math.round(S3.mode=='lin'?y/x:x*y),1,20);
@@ -252,11 +446,11 @@ const QZ=[['Resep kue: 4 porsi memerlukan 200 g tepung. Untuk 10 porsi diperluka
 function qz(){const sc=QA.filter(a=>a&&a.ok).length,dn=QA.filter(a=>a).length;$('#qz').innerHTML=QZ.map((q,i)=>`<div class="q"><b>${i+1}. ${q[0]}</b>${q[1].map((o,j)=>`<button onclick="ans(${i},${j})" ${QA[i]?'disabled':''} class="${QA[i]?(j==q[2]?'ok':QA[i].j==j?'no':''):''}">${'ABCD'[j]}. ${o}</button>`).join('')}${QA[i]?`<div class="fb" style="color:${QA[i].ok?'#1d9a57':'#d65a55'}">${QA[i].ok?'Benar! ':'Belum tepat. '}${q[3]}</div>`:''}</div>`).join('')+`<p><b>Skor: ${sc} / 5</b>${dn==5?' — Selesai!':''}</p>`}
 function ans(i,j){if(QA[i])return;QA[i]={j,ok:j==QZ[i][2]};snd(QA[i].ok?'benar':'salah');if(QA.filter(a=>a).length==5)mark('quiz');qz()}
 function resetSt(){Object.keys(T).filter(k=>k.startsWith(st+':')).forEach(k=>delete T[k]);OBS=OBS.filter(o=>!o.startsWith('Stasiun '+st));
-if(st==1){Object.assign(S1,{tool:null,x:4,A:null,B:null,res:null,cmp:false});F[1]={};delete F.c[1]}
+if(st==1){Object.assign(S1,{tool:null,x:4,A:null,B:null,res:null,cmp:false,u:U0(),mob:M0(),mu:{s:0,v:0,t:0},tk:K0(),kk:KK0(),urun:false});F[1]={};delete F.c[1]}
 if(st==2){Object.assign(S2,{tools:{},cm:4,n:250000,A:null,B:null,pa:{x:110,y:240},pb:{x:238,y:144},cmp:false,ran:false});F[2]=null;delete F.c[2]}
 if(st==3){Object.assign(S3,{mode:null,k:6,x:4,A:null,B:null,ran:false,both:false,cmp:false,q:null});F[3]={};delete F.c[3]}
 prog();render();toast('Stasiun '+st+' direset')}
-function resetAll(){T={};STP={};OBS=[];F={1:{},2:null,3:{},c:{}};REFL=['','',''];QA=[];Object.assign(S1,{tool:null,x:4,A:null,B:null,res:null,cmp:false});Object.assign(S2,{tools:{},cm:4,n:250000,A:null,B:null,pa:{x:110,y:240},pb:{x:238,y:144},cmp:false,ran:false});Object.assign(S3,{mode:null,k:6,x:4,A:null,B:null,ran:false,both:false,cmp:false,q:null});
+function resetAll(){T={};STP={};OBS=[];F={1:{},2:null,3:{},c:{}};REFL=['','',''];QA=[];Object.assign(S1,{tool:null,x:4,A:null,B:null,res:null,cmp:false,u:U0(),mob:M0(),mu:{s:0,v:0,t:0},tk:K0(),kk:KK0(),urun:false});Object.assign(S2,{tools:{},cm:4,n:250000,A:null,B:null,pa:{x:110,y:240},pb:{x:238,y:144},cmp:false,ran:false});Object.assign(S3,{mode:null,k:6,x:4,A:null,B:null,ran:false,both:false,cmp:false,q:null});
 st=1;$('#last').textContent='Belum ada pengamatan. Mulai dari stasiun mana saja.';prog();steps();render();toast('Semua data direset')}
 function fit(){$('#stage').style.transform='scale('+Math.min(innerWidth/1280,innerHeight/720)+')'}
 addEventListener('resize',fit);addEventListener('keydown',e=>{if(e.key=='Escape')closeM()});
